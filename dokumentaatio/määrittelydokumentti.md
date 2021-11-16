@@ -1,6 +1,6 @@
 # Vaatimusmäärittely
 
-##Sovelluksen tarkoitus
+## Sovelluksen tarkoitus
 
 Sovelluksen avulla kanien kasvattajat voivat helpommin hallinnoida kanilaansa. Sovelluksen avulla voidaan pitää kirjaa kaikista kasvattajan omistamista kaneista 
 tietokannan (tai tiedoston) avulla, tarkistaa, mitkä kanit voidaan astuttaa keskenään sekä kirjata ylös kaikki tehdyt astutukset. Sovellusta voi käyttää useampi 
