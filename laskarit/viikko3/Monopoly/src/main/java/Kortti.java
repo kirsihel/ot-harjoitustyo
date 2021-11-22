@@ -11,12 +11,10 @@
 public class Kortti {
     Toiminto toiminto;
     String tyyppi;
-    SattumaJaYhteismaa sjy;
     
-    public void Kortti(Toiminto toiminto, String tyyppi, SattumaJaYhteismaa sjy){
+    public void Kortti(Toiminto toiminto, String tyyppi){
         this.toiminto = toiminto;
-        this.tyyppi = tyyppi;
-        this.sjy = sjy;         
+        this.tyyppi = tyyppi;       
     }
     
     public Toiminto getAction(){
@@ -25,10 +23,5 @@ public class Kortti {
     
     public String getType(){
         return this.tyyppi;
-    }
-    
-    public SattumaJaYhteismaa getChanceAndCommunityChest(){
-        return this.sjy;
-    }
-       
+    }      
 }
