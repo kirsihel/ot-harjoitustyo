@@ -3,3 +3,5 @@
 [työaikakirjanpito](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/ty%C3%B6aikakirjanpito.md)
 
 [UserClass-info](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/UserClass-info.md)
+
+[AppClass-info](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/AppClass-info.md)
