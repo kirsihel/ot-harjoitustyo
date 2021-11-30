@@ -11,3 +11,5 @@
 | 23.11 | 1 | Info dokumentit User ja App luokille | 
 | 29.11 | 1 | Rabbit-luokka |
 | 30.11 | 0.5 | Rabbit-luokan testaus |
+| 30.11 | 0.5 | checkstyle |
+| 30.11 | 0.5 | graafinen käyttöliittymä |
