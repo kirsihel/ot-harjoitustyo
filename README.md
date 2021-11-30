@@ -5,3 +5,5 @@
 [UserClass-info](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/UserClass-info.md)
 
 [AppClass-info](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/AppClass-info.md)
+
+[arkkitehtuuri](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
