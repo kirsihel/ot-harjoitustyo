@@ -24,6 +24,7 @@ public class App extends Application {
         Button login = new Button("kirjaudu");
         Button newuser = new Button("luo uusi käyttäjä");
         Button back = new Button("Palaa");
+        Button logout = new Button("kirjaudu ulos");
         
         HBox user = new HBox();
         user.getChildren().add(new Label("käyttäjänimi:    "));
@@ -64,13 +65,30 @@ public class App extends Application {
         sign.setCenter(box);
         sign.setBottom(buttons);
         
+        VBox main = new VBox();
+        main.setSpacing(10);
+        main.getChildren().add(new Label ("Mitä haluat tehdä?"));
+        main.getChildren().add(new Button("valitse kani"));
+        main.getChildren().add(new Button("valitse pari"));
+        main.getChildren().add(new Button("lisää astutus"));
+        main.getChildren().add(logout);
+        
+        
         Scene view = new Scene(layout,230,100);
         Scene signin = new Scene(sign,250,150);
+        Scene main_view = new Scene(main,100,170);
+        
 
         newuser.setOnAction((event) -> {
             stage.setScene(signin);
         });
         back.setOnAction((event) -> {
+            stage.setScene(view);
+        });
+        login.setOnAction((event) -> {
+            stage.setScene(main_view);
+        });
+        logout.setOnAction((event) -> {
             stage.setScene(view);
         });
         

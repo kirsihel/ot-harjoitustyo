@@ -9,3 +9,5 @@
 | 23.11 | 0.25 | User-luokka |
 | 23.11 | 1 | Testaus |
 | 23.11 | 1 | Info dokumentit User ja App luokille | 
+| 29.11 | 1 | Rabbit-luokka |
+| 30.11 | 0.5 | Rabbit-luokan testaus |
