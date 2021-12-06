@@ -1,3 +1,11 @@
+# RabbitPlan
+
+Sovelluksen avulla kanien kasvattajat voivat helpommin hallinnoida kanilaansa. Sovelluksen avulla voidaan pitää kirjaa kaikista kasvattajan omistamista kaneista 
+tietokannan avulla, tarkistaa, mitkä kanit voidaan astuttaa keskenään sekä kirjata ylös kaikki tehdyt astutukset. Sovellusta voi käyttää useampi 
+rekisteröitynyt käyttäjä, joilla kaikilla on omat yksilölliset listat omista kaneista sekä astutuksista.
+
+
+
 [Määrittelydokumentti](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/m%C3%A4%C3%A4rittelydokumentti.md)
 
 [työaikakirjanpito](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/ty%C3%B6aikakirjanpito.md)
