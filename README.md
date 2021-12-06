@@ -6,6 +6,10 @@ rekisteröitynyt käyttäjä, joilla kaikilla on omat yksilölliset listat omist
 
 Sovellus toimii harjoitustyönä Helsingin yliopiston Tietojenkäsittelytieteen kurssilla Ohjelmistotekniikka. 
 
+## Javan versio
+
+Sovellus on tehty käyttäen Javan versiota 11. Sovellusta on testattu virtuaalisessatyöasemassa, joten se toimii ainakin laitoksen koneilla.
+
 [Määrittelydokumentti](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/m%C3%A4%C3%A4rittelydokumentti.md)
 
 [työaikakirjanpito](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/ty%C3%B6aikakirjanpito.md)
