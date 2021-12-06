@@ -4,7 +4,7 @@ Sovelluksen avulla kanien kasvattajat voivat helpommin hallinnoida kanilaansa. S
 tietokannan avulla, tarkistaa, mitkä kanit voidaan astuttaa keskenään sekä kirjata ylös kaikki tehdyt astutukset. Sovellusta voi käyttää useampi 
 rekisteröitynyt käyttäjä, joilla kaikilla on omat yksilölliset listat omista kaneista sekä astutuksista.
 
-
+Sovellus toimii harjoitustyönä Helsingin yliopiston Tietojenkäsittelytieteen kurssilla Ohjelmistotekniikka. 
 
 [Määrittelydokumentti](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/m%C3%A4%C3%A4rittelydokumentti.md)
 
