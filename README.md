@@ -30,11 +30,11 @@ Sovellus on tehty käyttäen Javan versiota 11. Sovelluksen käyttöliittymä k�
 
 Testit voidaan suorittaa komennolla `mvn test`.
 
-Testikattavuusraportti saadaan luotua komennolla `mvn jacoco:report`. Kattavuusraportin saa auki selaimella avaamalla tiedoston **target/site/jacoco/index.html**.
+Testikattavuusraportti saadaan luotua komennolla `mvn jacoco:report`. Kattavuusraportin saa auki selaimella avaamalla tiedoston *target/site/jacoco/index.html*.
 
 Halutessaan testit voi myös suorittaa käyttäen NetBeansia.
 
 ### Checkstyle
 
-Tiedostoon checkstyle.xml määrittelemät tarkistukset voidaan suorittaa komennolla `mvn jxr:jxr checkstyle:checkstyle`. Mahdolliset virheilmoitukset voidaan tarkistaa selaimella avaamalla tiedosto **target/site/checkstyle.html**
+Tiedostoon checkstyle.xml määrittelemät tarkistukset voidaan suorittaa komennolla `mvn jxr:jxr checkstyle:checkstyle`. Mahdolliset virheilmoitukset voidaan tarkistaa selaimella avaamalla tiedosto *target/site/checkstyle.html*.
 
