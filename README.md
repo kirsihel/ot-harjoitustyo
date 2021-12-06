@@ -8,7 +8,7 @@ Sovellus toimii harjoitustyönä Helsingin yliopiston Tietojenkäsittelytieteen 
 
 ## Javan versio
 
-Sovellus on tehty käyttäen Javan versiota 11. Sovellusta on testattu virtuaalisessatyöasemassa, joten se toimii ainakin laitoksen koneilla.
+Sovellus on tehty käyttäen Javan versiota 11. Sovelluksen käyttöliittymä käyttää JavaFX:ää. Sovellusta on testattu virtuaalisessatyöasemassa, joten se toimii ainakin laitoksen koneilla.
 
 [Määrittelydokumentti](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/m%C3%A4%C3%A4rittelydokumentti.md)
 
