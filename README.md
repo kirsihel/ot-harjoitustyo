@@ -10,6 +10,8 @@ Sovellus toimii harjoitustyönä Helsingin yliopiston Tietojenkäsittelytieteen 
 
 Sovellus on tehty käyttäen Javan versiota 11. Sovelluksen käyttöliittymä käyttää JavaFX:ää. Sovellusta on testattu virtuaalisessatyöasemassa, joten se toimii ainakin laitoksen koneilla.
 
+## Dokumentaatio
+
 [Määrittelydokumentti](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/m%C3%A4%C3%A4rittelydokumentti.md)
 
 [työaikakirjanpito](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/ty%C3%B6aikakirjanpito.md)
