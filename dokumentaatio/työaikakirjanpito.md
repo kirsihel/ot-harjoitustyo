@@ -16,3 +16,5 @@
 | 5.12 | 1 | tietokannan käyttöönotto ja daot |
 | 6.12 | 0.5 | Breeding-luokka ja sen testaus |
 | 6.12 | 0.25 | checkstyle |
+| 7.12 | 1 | UserDao-luokka |
+| 7.12 | 3 | Tietokannan saaminen toimimaan |
