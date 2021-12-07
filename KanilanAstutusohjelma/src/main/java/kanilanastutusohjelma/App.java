@@ -1,20 +1,23 @@
 package kanilanastutusohjelma;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
+import static javafx.application.Application.launch;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class App extends Application {
-
-    @Override
+public class App extends Application{
+    
     public void start(Stage stage) {
         stage.setTitle("RabbitPlan");
         
@@ -68,15 +71,16 @@ public class App extends Application {
         VBox main = new VBox();
         main.setSpacing(10);
         main.getChildren().add(new Label ("Mitä haluat tehdä?"));
+        main.getChildren().add(new Button("lisää kani"));
         main.getChildren().add(new Button("valitse kani"));
         main.getChildren().add(new Button("valitse pari"));
-        main.getChildren().add(new Button("lisää astutus"));
+        main.getChildren().add(new Button("kirjaa astutus"));
         main.getChildren().add(logout);
         
         
         Scene view = new Scene(layout,230,100);
         Scene signin = new Scene(sign,250,150);
-        Scene main_view = new Scene(main,100,170);
+        Scene main_view = new Scene(main,100,200);
         
 
         newuser.setOnAction((event) -> {
@@ -95,9 +99,10 @@ public class App extends Application {
         stage.setScene(view);
         stage.show();
     }
-
+    
     public static void main(String[] args) {
         launch();
     }
-
+    
+    
 }

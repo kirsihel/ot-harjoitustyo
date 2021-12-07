@@ -5,14 +5,10 @@
  */
 package dao;
 
- 
-
 /**
  *
  * @author Kirsi
  */
-public class UserDao implements  {
-
-    
+public interface DaoUser {
     
 }

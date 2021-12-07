@@ -13,3 +13,6 @@
 | 30.11 | 0.5 | Rabbit-luokan testaus |
 | 30.11 | 0.5 | checkstyle |
 | 30.11 | 0.5 | graafinen käyttöliittymä |
+| 5.12 | 1 | tietokannan käyttöönotto ja daot |
+| 6.12 | 0.5 | Breeding-luokka ja sen testaus |
+| 6.12 | 0.25 | checkstyle |
