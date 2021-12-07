@@ -18,3 +18,4 @@
 | 6.12 | 0.25 | checkstyle |
 | 7.12 | 1 | UserDao-luokka |
 | 7.12 | 3 | Tietokannan saaminen toimimaan |
+| yht. | 19 |
