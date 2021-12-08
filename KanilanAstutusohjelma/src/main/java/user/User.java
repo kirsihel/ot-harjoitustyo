@@ -8,11 +8,11 @@ public class User {
     String breederid;
     Integer id;
     
-    public User(Integer id, String username, String rabbitryname, String bnreederid) {
+    public User(String username) {
         this.username = username;
-        this.rabbitryname = rabbitryname;
-        this.breederid = breederid;
-        this.id = null;
+        this.rabbitryname = null;
+        this.breederid = null;
+
     }
     
     public void setRabbitryName(String name) {
@@ -33,14 +33,5 @@ public class User {
     
     public String getBreederId() {
         return this.breederid;
-    }
-    
-    public void setId(Integer id) {
-        this.id = id;
-    }  
-    
-    public Integer getId() {
-        return this.id;
-    }
-    
+    } 
 }

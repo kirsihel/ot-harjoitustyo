@@ -23,15 +23,15 @@ public class UserTest {
     
     @Test
     public void getUser(){
-        User user = new User(1,"kirsihel","Mystical","F131");
+        User user = new User("kirsihel");
         users.add(user);
         assertEquals(users.get(0).getUsername(),"kirsihel");
     }
     
     @Test
     public void setRabbitryName() {
-        User user = new User(1,"kirsihel","Mystical","F131");
-        User second = new User(2,"user",null,null);
+        User user = new User("kirsihel");
+        User second = new User("user");
         user.setRabbitryName("Mystical");
         users.add(user);
         users.add(second);
@@ -41,8 +41,8 @@ public class UserTest {
     
     @Test
     public void setBreederId() {
-        User user = new User(1,"kirsihel","Mystical","F131");
-        User second = new User(2,"user",null,null);
+        User user = new User("kirsihel");
+        User second = new User("user");
         user.setBreederId("F131");
         users.add(user);
         users.add(second);

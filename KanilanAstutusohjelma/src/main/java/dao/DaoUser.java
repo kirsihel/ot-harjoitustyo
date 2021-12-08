@@ -5,10 +5,19 @@
  */
 package dao;
 
+import java.util.List;
+import user.User;
+
 /**
  *
  * @author Kirsi
  */
 public interface DaoUser {
     
+    User create(User user) throws Exception;
+    
+    User find(String username) throws Exception;
+    
+    List<User> getUsers();
+        
 }
