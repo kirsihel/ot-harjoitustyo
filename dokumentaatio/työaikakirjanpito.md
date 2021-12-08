@@ -18,4 +18,5 @@
 | 6.12 | 0.25 | checkstyle |
 | 7.12 | 1 | UserDao-luokka |
 | 7.12 | 3 | Tietokannan saaminen toimimaan |
-| yht. | 19 |
+| 8.12 | 1 | UserDao-luokan muuttaminen + tietokannan muuttaminen tiedostoksi |
+| yht. | 20 |
