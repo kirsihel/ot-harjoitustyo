@@ -40,3 +40,7 @@ Halutessaan testit voi myös suorittaa käyttäen NetBeansia.
 
 Tiedostoon checkstyle.xml määrittelemät tarkistukset voidaan suorittaa komennolla `mvn jxr:jxr checkstyle:checkstyle`. Mahdolliset virheilmoitukset voidaan tarkistaa selaimella avaamalla tiedosto *target/site/checkstyle.html*.
 
+### suorittettavan jar-tiedoston generointi
+
+Komennolla `mvn package` voidaan generoida jar-tiedosto *KanilanAstutusohjelma-1.0-SNAPSHOT* kansioon *target*
+
