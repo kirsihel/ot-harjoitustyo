@@ -3,11 +3,7 @@
 ## Sovelluksen tarkoitus
 
 Sovelluksen avulla kanien kasvattajat voivat helpommin hallinnoida kanilaansa. Sovelluksen avulla voidaan pitää kirjaa kaikista kasvattajan omistamista kaneista 
-<<<<<<< HEAD
-tietokannan avulla, tarkistaa, mitkä kanit voidaan astuttaa keskenään sekä kirjata ylös kaikki tehdyt astutukset. Sovellusta voi käyttää useampi 
-=======
 tiedoston avulla, tarkistaa, mitkä kanit voidaan astuttaa keskenään sekä kirjata ylös kaikki tehdyt astutukset. Sovellusta voi käyttää useampi 
->>>>>>> fe02b5cf53aa85b3543a723a34b66c9908ff436c
 rekisteröitynyt käyttäjä, joilla kaikilla on omat yksilölliset listat omista kaneista sekä astutuksista. 
 
 ## Käyttäjät
