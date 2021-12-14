@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
-import static javafx.application.Application.launch;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -15,9 +14,12 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import service.Service;
 
 public class App extends Application{
+    private Service service;
     
+    @Override
     public void start(Stage stage) {
         stage.setTitle("RabbitPlan");
         
@@ -28,10 +30,15 @@ public class App extends Application{
         Button newuser = new Button("luo uusi käyttäjä");
         Button back = new Button("Palaa");
         Button logout = new Button("kirjaudu ulos");
+        Button create = new Button("Luo");
+        
+        TextField usernameinput = new TextField();
+        TextField rabbitrynameinput = new TextField();
+        TextField breederidinput = new TextField();
         
         HBox user = new HBox();
         user.getChildren().add(new Label("käyttäjänimi:    "));
-        user.getChildren().add(new TextField(""));
+        user.getChildren().add(usernameinput);
         
         HBox button = new HBox();
         button.getChildren().add(new Label("                 "));
@@ -43,17 +50,17 @@ public class App extends Application{
         
         HBox rabbitry = new HBox();
         rabbitry.getChildren().add(new Label("kasvattajanimi:       "));
-        rabbitry.getChildren().add(new TextField(""));
+        rabbitry.getChildren().add(rabbitrynameinput);
         
         HBox number = new HBox();
         number.getChildren().add(new Label("kasvattajanumero: "));
-        number.getChildren().add(new TextField(""));
+        number.getChildren().add(breederidinput);
         
         HBox buttons = new HBox();
         buttons.setSpacing(10);
         buttons.getChildren().add(new Label("                     "));
         buttons.getChildren().add(back);
-        buttons.getChildren().add(new Button("Luo"));
+        buttons.getChildren().add(create);
         
         VBox box = new VBox();
         box.setSpacing(10);
@@ -86,12 +93,25 @@ public class App extends Application{
         newuser.setOnAction((event) -> {
             stage.setScene(signin);
         });
+        
         back.setOnAction((event) -> {
             stage.setScene(view);
         });
-        login.setOnAction((event) -> {
-            stage.setScene(main_view);
+        
+        create.setOnAction((event) -> {
+            String usernametext = usernameinput.getText();
+            String rabbitrynametext = rabbitrynameinput.getText();
+            String breederidtext = breederidinput.getText();
+            
+            if (usernametext.length() < 5) {
+                usernameinput.setText("too short username");              
+            } else if (service.createUser(usernametext, rabbitrynametext, breederidtext)) {
+                usernameinput.setText("new user created");
+            } else {
+                usernameinput.setText("not an unique username");        
+            }
         });
+        
         logout.setOnAction((event) -> {
             stage.setScene(view);
         });
@@ -101,7 +121,7 @@ public class App extends Application{
     }
     
     public static void main(String[] args) {
-        launch();
+        launch(args);
     }
     
     

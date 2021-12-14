@@ -12,7 +12,7 @@ public class UserDao implements DaoUser {
     private List<User> users;
     private String file;
     
-    public UserDao(String file) throws Exception{
+    public UserDao(String file) throws Exception {
         this.users = new ArrayList<>();
         this.file = file;
         load();
@@ -23,22 +23,11 @@ public class UserDao implements DaoUser {
             Scanner reader = new Scanner(new File(file));
             while (reader.hasNextLine()) {
                 String[] words = reader.nextLine().split(";");
-                if(words.length == 3){
-                    User user = new User(words[0]);
-                    user.setRabbitryName(words[1]);
-                    user.setBreederId(words[2]);
-                    users.add(user);
-                } else if(words.length == 2){
-                    User user = new User(words[0]);
-                    user.setRabbitryName(words[1]);
-                    users.add(user);
-                } else {
-                    User user = new User(words[0]);
-                    users.add(user);
-                }
+                User user = new User(words[0], words[1], words[2]);
                 
+                users.add(user);
             }
-        } catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -47,10 +36,10 @@ public class UserDao implements DaoUser {
         try {
             FileWriter writer = new FileWriter(new File(file));
             for (User user : users) {
-                writer.write(user.getUsername()+";"+user.getRabbitryName()+";"+user.getBreederId()+"\n");
+                writer.write(user.getUsername() + ";" + user.getRabbitryName() + ";" + user.getBreederId() + "\n");
             }
             writer.close();
-        } catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
