@@ -25,6 +25,7 @@ Sovellus on tehty käyttäen Javan versiota 11. Sovelluksen käyttöliittymä k�
 ## Releaset
 
 [Viikko 5](https://github.com/kirsihel/ot-harjoitustyo/releases/tag/Viikko5)
+[Viikko 6](https://github.com/kirsihel/ot-harjoitustyo/releases/tag/Viikko6)
 
 ## Komentorivi toiminnot
 
@@ -44,3 +45,6 @@ Tiedostoon checkstyle.xml määrittelemät tarkistukset voidaan suorittaa komenn
 
 Komennolla `mvn package` voidaan generoida jar-tiedosto *KanilanAstutusohjelma-1.0-SNAPSHOT* kansioon *target*
 
+### JavaDoc
+
+JavaDoc voidaan generoida komennolla `mvn javadoc:javadoc`.
