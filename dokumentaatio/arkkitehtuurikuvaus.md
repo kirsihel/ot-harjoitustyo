@@ -4,7 +4,7 @@
 
 Ohjelma on toteutettu viiden pakkauksen ja kahdeksan luokan avulla. Ohjelman pakkausrakenne on seuraavanlainen:
 
-
+![Image](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/Luokka_pakkauskaavio.png)
 
 Ohjelmassa on kolme pääluokkaa: User, Rabbit ja Breeding, joiden luokkakaavio on seuraavanlainen:
 
