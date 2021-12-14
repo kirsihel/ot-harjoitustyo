@@ -24,6 +24,8 @@ Sovellus on tehty käyttäen Javan versiota 11. Sovelluksen käyttöliittymä k�
 
 [Arkkitehtuurikuvaus](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuurikuvaus.md)
 
+[Käyttöohje](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
+
 ## Releaset
 
 [Viikko 5](https://github.com/kirsihel/ot-harjoitustyo/releases/tag/Viikko5)
