@@ -16,14 +16,10 @@ import user.User;
  */
 public class Service {
     private UserDao userdao;
-    private RabbitDao rabbitdao;
-    private BreedingDao breedingdao;
     private User loggedin;
     
-    public Service(UserDao userdao, RabbitDao rabbitdao, BreedingDao breedingdao) {
+    public Service(UserDao userdao) {
         this.userdao = userdao;
-        this.rabbitdao = rabbitdao;
-        this.breedingdao = breedingdao;
     }
     
     public boolean createUser(String username, String rabbitryname, String breederid) {

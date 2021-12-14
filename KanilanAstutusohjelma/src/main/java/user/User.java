@@ -8,6 +8,9 @@ public class User {
     String breederid;
     Integer id;
     
+    /**
+    * Luokka tarjoaa käyttäjien tietojen ylläpitoa ja tietojen noutoa. 
+    */
     public User(String username, String rabbitryname, String breederid) {
         this.username = username;
         this.rabbitryname = rabbitryname;

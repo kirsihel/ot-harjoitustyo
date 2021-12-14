@@ -2,6 +2,9 @@ package rabbitry;
 
 import java.time.LocalDate;
 
+/**
+* Luokka tarjoaa astutuksien tietojen ylläpitoa ja tietojen noutoa. 
+*/
 public class Breeding {
     Rabbit buck;
     Rabbit doe;

@@ -5,6 +5,9 @@ import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Luokka tarjoaa kanien tietojen ylläpitoa ja tietojen noutoa. 
+ */
 public class Rabbit {
     private String name;
     private String breed;
@@ -85,6 +88,9 @@ public class Rabbit {
         return family;
     }
     
+    /**
+    * Metodin avulla voidaan tarkistaa, onko kaksi kania toisilleen sukua. 
+    */
     public boolean isRelated(Rabbit rabbit) {
         List<String> family = getFamily();
         

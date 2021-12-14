@@ -8,6 +8,9 @@ import java.util.List;
 import java.util.Scanner;
 import user.User;
 
+/**
+* Luokka tarjoaa käyttäjä tietojen käsittelyä tiedoston avulla. 
+*/
 public class UserDao implements DaoUser {
     private List<User> users;
     private String file;
@@ -32,6 +35,9 @@ public class UserDao implements DaoUser {
         }
     }
     
+    /**
+    * Metodin avulla voidaan tallentaa käyttäjiä tiedostoon. 
+    */
     private void save() {
         try {
             FileWriter writer = new FileWriter(new File(file));
@@ -48,12 +54,18 @@ public class UserDao implements DaoUser {
     public List<User> getUsers() {
         return users;
     }
-
+    
+    /**
+    * Metodin avulla voidaan tarkastaa löytyykö käyttäjä tiedostosta. 
+    */
     @Override
     public User find(String username) {
         return users.stream().filter(u->u.getUsername().equals(username)).findFirst().orElse(null);
     }
-
+    
+    /**
+    * Metodin avulla voidaan luoda uusi käyttäjä.
+    */
     @Override
     public User create(User user) {
         users.add(user);

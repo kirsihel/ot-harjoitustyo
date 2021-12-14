@@ -19,4 +19,12 @@
 | 7.12 | 1 | UserDao-luokka |
 | 7.12 | 3 | Tietokannan saaminen toimimaan |
 | 8.12 | 1 | UserDao-luokan muuttaminen + tietokannan muuttaminen tiedostoksi |
-| yht. | 20 |
+| 12.12 | 0.25 | checkstyle |
+| 13.12 | 1 | Service-luokka |
+| 13.12 | 1 | App-luokan muuttaminen |
+| 14.12 | 0.5 | käyttöliittymä |
+| 14.12 | 0.25 | JavaDoc |
+| 14.12 | 1.5 | Dokumentaatio |
+| 14.12 | 0.5 | Testaus |
+| 14.12 | 0.25 | Checkstyle |
+| yht. | 25.25 |

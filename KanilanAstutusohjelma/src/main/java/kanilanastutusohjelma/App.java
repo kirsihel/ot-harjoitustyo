@@ -1,5 +1,6 @@
 package kanilanastutusohjelma;
 
+import dao.UserDao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -19,6 +20,17 @@ import service.Service;
 public class App extends Application{
     private Service service;
     
+    /**
+     *Metodin avulla luodaan UserDao- ja Service-oliot.
+     * 
+     * @throws Exception
+     */
+    @Override
+    public void init() throws Exception {
+        UserDao userdao = new UserDao("userfile.txt");
+        service = new Service(userdao);
+    }
+    
     @Override
     public void start(Stage stage) {
         stage.setTitle("RabbitPlan");
@@ -35,6 +47,7 @@ public class App extends Application{
         TextField usernameinput = new TextField();
         TextField rabbitrynameinput = new TextField();
         TextField breederidinput = new TextField();
+        TextField nameinput = new TextField();
         
         HBox user = new HBox();
         user.getChildren().add(new Label("käyttäjänimi:    "));
@@ -46,7 +59,7 @@ public class App extends Application{
         
         HBox username = new HBox();
         username.getChildren().add(new Label("käyttäjänimi:          "));
-        username.getChildren().add(new TextField(""));
+        username.getChildren().add(nameinput);
         
         HBox rabbitry = new HBox();
         rabbitry.getChildren().add(new Label("kasvattajanimi:       "));
@@ -99,17 +112,26 @@ public class App extends Application{
         });
         
         create.setOnAction((event) -> {
-            String usernametext = usernameinput.getText();
+            String usernametext = nameinput.getText();
             String rabbitrynametext = rabbitrynameinput.getText();
             String breederidtext = breederidinput.getText();
             
             if (usernametext.length() < 5) {
-                usernameinput.setText("too short username");              
+                nameinput.setText("liian lyhyt käyttäjänimi");              
             } else if (service.createUser(usernametext, rabbitrynametext, breederidtext)) {
-                usernameinput.setText("new user created");
+                nameinput.setText("uusi käyttäjä luotu");
             } else {
-                usernameinput.setText("not an unique username");        
+                nameinput.setText("käyttäjänimi on jo olemassa");        
             }
+        });
+        
+        login.setOnAction((event) -> {
+          String name =  usernameinput.getText();
+          if(service.logIn(name)) {
+              stage.setScene(main_view);
+          } else {
+              usernameinput.setText("käyttäjänimeä ei löydy");
+          }
         });
         
         logout.setOnAction((event) -> {
