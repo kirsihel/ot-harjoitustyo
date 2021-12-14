@@ -24,7 +24,7 @@
 | 13.12 | 1 | App-luokan muuttaminen |
 | 14.12 | 0.5 | käyttöliittymä |
 | 14.12 | 0.25 | JavaDoc |
-| 14.12 | 1.5 | Dokumentaatio |
+| 14.12 | 2 | Dokumentaatio |
 | 14.12 | 0.5 | Testaus |
 | 14.12 | 0.25 | Checkstyle |
-| yht. | 25.25 |
+| yht. | 25.75 |
