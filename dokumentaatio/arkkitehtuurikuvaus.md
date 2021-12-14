@@ -38,3 +38,5 @@ Yksi päätoiminnallisuuksista on sisään kirjautuminen. Kun käyttäjä haluaa
 Service metodia logIn(String username), joka taas kutsuu luokan UserDao metodia find(String username). Jos käyttäjänimi löytyy, niin metodi palauttaa
 kyseisen käyttäjän, jolloin metodi logIn(String username) palauttaa true. Jos käyttäjää ei löytynyt, palauttaa metodi find(String username) null, jolloin 
 metodi logIn(String username) palauttaa false.
+
+![Image](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/sekvenssikaavio.png)
