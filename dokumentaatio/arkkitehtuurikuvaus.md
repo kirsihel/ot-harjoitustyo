@@ -12,6 +12,7 @@ Ohjelmassa on kolme pääluokkaa: User, Rabbit ja Breeding, joiden luokkakaavio 
 
 Lisää luokista ja niiden toiminnallisuudesta voi lukea seuraavista linkeistä:
 
+[RabbitClass-info](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/RabbitClass-info.md)
 
 ## Käyttöliittymä
 Ohjelmassa on graafinen käyttöliittymä, joka sisältää seitsemän eri näkymää:
