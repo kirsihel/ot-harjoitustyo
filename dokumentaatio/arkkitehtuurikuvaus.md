@@ -8,7 +8,7 @@ Ohjelma on toteutettu viiden pakkauksen ja kahdeksan luokan avulla. Ohjelman pak
 
 Ohjelmassa on kolme pääluokkaa: User, Rabbit ja Breeding, joiden luokkakaavio on seuraavanlainen:
 
-
+![Image](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/luokkakaavio.png)
 
 Lisää luokista ja niiden toiminnallisuudesta voi lukea seuraavista linkeistä:
 
