@@ -14,7 +14,7 @@ Ohjelma käynnistetään komennolla `java -jar KanilanAstutusohjelma-1.0-SNAPSHO
 
 Sovellus aukeaa kirjautumisnäkymään:
 
-
+[Image](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/kirjautuminen.png)
 
 Kirjautuminen onnistuu, kun tiedostosta löytyy kirjoituskenttään syötetty käyttäjänimi ja painetaan *kirjaudu*.
 
