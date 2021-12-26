@@ -32,6 +32,8 @@ Sovellus on tehty käyttäen Javan versiota 11. Sovelluksen käyttöliittymä k�
 
 [Viikko 6](https://github.com/kirsihel/ot-harjoitustyo/releases/tag/Viikko6)
 
+[Viikko 7](https://github.com/kirsihel/ot-harjoitustyo/releases/tag/Viikko7)
+
 ## Komentorivi toiminnot
 
 ### Testaaminen
