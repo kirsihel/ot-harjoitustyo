@@ -4,14 +4,16 @@
 
 Ohjelma on toteutettu viiden pakkauksen ja kahdeksan luokan avulla. Ohjelman pakkausrakenne on seuraavanlainen:
 
-
+![Image](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/Luokka_pakkauskaavio.png)
 
 Ohjelmassa on kolme pääluokkaa: User, Rabbit ja Breeding, joiden luokkakaavio on seuraavanlainen:
 
-
+![Image](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/luokkakaavio.png)
 
 Lisää luokista ja niiden toiminnallisuudesta voi lukea seuraavista linkeistä:
 
+[RabbitClass-info](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/RabbitClass-info.md)
+[UserClass-info](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/UserClass-info.md)
 
 ## Käyttöliittymä
 Ohjelmassa on graafinen käyttöliittymä, joka sisältää seitsemän eri näkymää:
@@ -38,3 +40,5 @@ Yksi päätoiminnallisuuksista on sisään kirjautuminen. Kun käyttäjä haluaa
 Service metodia logIn(String username), joka taas kutsuu luokan UserDao metodia find(String username). Jos käyttäjänimi löytyy, niin metodi palauttaa
 kyseisen käyttäjän, jolloin metodi logIn(String username) palauttaa true. Jos käyttäjää ei löytynyt, palauttaa metodi find(String username) null, jolloin 
 metodi logIn(String username) palauttaa false.
+
+![Image](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/sekvenssikaavio.png)
