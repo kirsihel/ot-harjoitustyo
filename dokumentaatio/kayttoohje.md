@@ -41,6 +41,16 @@ Kun valitaan päänäkymästä `lisää kani`, päästään kaninlisäysnäkymä
 
 Kun syötetään uuden kanin tiedot ja painetaan `lisää`, niin sovellus ilmoittaa, jos kanin lisäys on onnistunut.
 
+## Astutusten tarkastus.
+
+Astutuksia voidaan tarkastaa valitsemalla yksi kani painamalla `valitse kani`, jolloin siirrytään näkymään:
+
+![Image](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/valitse.png)
+
+tai valitsemalla pari painamalla `valitse pari`, jolloin päästään näkymään:
+
+![Image](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/pari.png)
+
 ## Päivämäärät
 
 Kaikki kanien syntymäpäivät sekä muut päivämäärät tulee syöttää muodossa "vvvv-kk-pp".
