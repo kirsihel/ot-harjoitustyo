@@ -47,6 +47,10 @@ public class Rabbit {
         return this.sex;
     }
     
+    public LocalDate getBirthDate() {
+        return this.birthdate;
+    }
+    
     public Period getAge() {
         LocalDate today = LocalDate.now();
         Period age = Period.between(this.birthdate, today);

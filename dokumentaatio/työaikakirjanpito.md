@@ -27,4 +27,8 @@
 | 14.12 | 1.5 | Dokumentaatio |
 | 14.12 | 0.5 | Testaus |
 | 14.12 | 0.25 | Checkstyle |
-| yht. | 25.25 |
+| 18.12 | 1 | graafinen käyttöliittymä |
+| 19.12 | 1 | RabbitDao-luokka |
+| 20.12 | 1 | BreedingDao- ja Breeding-luokka |
+| 21.12 | 2.5 | graafinen käyttöliittymä |
+| yht. | 30.75 |
