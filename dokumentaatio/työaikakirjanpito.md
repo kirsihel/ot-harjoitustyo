@@ -31,4 +31,9 @@
 | 19.12 | 1 | RabbitDao-luokka |
 | 20.12 | 1 | BreedingDao- ja Breeding-luokka |
 | 21.12 | 2.5 | graafinen käyttöliittymä |
-| yht. | 30.75 |
+| 22.12 | 0.5 | Dokumentaatio |
+| 23.12 | 0.5 | Service-luokka |
+| 23.12 | 1.25 | graafinen käyttöliittymä |
+| 25.12 | 2 | testaus |
+| 26.12 | 1 | dokumentaatio |
+| yht. | 36 |

@@ -27,3 +27,11 @@ Kirjautumisnäkymästä voidaan siirtyä uuden käyttäjän luomiseen painamalla
 Uusi käyttäjä luodaan syöttämällä tiedot kirjoituskenttiin. Käyttäjänimen tulee olla uniikki ja vähintään 5 merkkiä pitkä. Kun luonti on onnistunut, 
 ylimpään kirjoitus kenttään ilmestyy teksti *uusi käyttäjä luotu*. Tällöin voidaan palata takaisin kirjautumisnäkymään ja kirjautua sisään.
 
+## Päivämäärät
+
+Kaikki kanien syntymäpäivät sekä muut päivämäärät tulee syöttää muodossa "vvvv-kk-pp".
+
+## Astutusten kirjaaminen
+
+Uudet astutukset tulee syöttää mudossa uros;naaras;päivämäärä.
+
