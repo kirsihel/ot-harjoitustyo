@@ -12,17 +12,13 @@ Sovelluksella on ainoastaan *normaaleja käyttäjiä* eli sovelluksella on vain 
 
 ## Käyttöliittymäluonnos
 
-Sovelluksessa on kuusi eri näkymää:
+Sovelluksessa on seitsemän eri näkymää:
 
 ![Image](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/RabbitPlan.png)
 
 Kun sovellus aukaa, näkyy ensimmäisenä kirjautumisnäkymä. Kirjautumisnäkymästä on mahdollista siirtyä näkymään, jossa voi luoda uuden käyttäjän tai palata 
 takaisin kirjautumisnäkymään. Uuden käyttäjän luomisen jälkeen palataan takaisin kirjautumisnäkymään. Kun kirjautuminen onnistuu, siirrytään seuraavaan
-näkymään, jossa voi valita, mitä haluaa tehdä tai voi kirjautua ulos. Jos haluaa nähdä, mitkä kanit ovat mahdollisia pareja astutukseen, valitaan `valitse kani`.
-Tällöin siirrytään näkymään, missä voi valita kanin tai palata takaisin, minkä jälkeen tulostuu mahdolliset parit tai palataan edelliseen näkymään. Jos haluaa
-nähdä onnistuuko kahden tietyn kanin astutus eli kanit eivät ole läheistä sukua, valitaan `valitse pari`. Tällöin siirrytään näkymään, jossa valitaan uros ja
-naaras tai palataan takaisin, jolloin tulostuu onnistuuko astutus tai palataan edelliseen näkymään. Jos haluaa lisätä tai poistaa astutuksen, valitaan `lisää
-astutus`, jolloin siirrytään näkymään, jossa voi lisätä tai poistaa astutuksen tai palata takaisin edelliseen näkymään.
+näkymään, jossa voi valita, mitä haluaa tehdä tai voi kirjautua ulos. Jos haluaa lisätä kaneja, valitaan `lisää kani`, jolloin siirrtyään näkymään, missä voi lisätä uuden kanin tidot. Jos haluaa nähdä, mitkä kanit ovat mahdollisia pareja astutukseen, valitaan `valitse kani`. Tällöin siirrytään näkymään, missä voi valita kanin tai palata takaisin, minkä jälkeen tulostuu mahdolliset parit tai palataan edelliseen näkymään. Jos haluaa nähdä onnistuuko kahden tietyn kanin astutus eli kanit eivät ole läheistä sukua, valitaan `valitse pari`. Tällöin siirrytään näkymään, jossa valitaan uros ja naaras tai palataan takaisin, jolloin tulostuu onnistuuko astutus tai palataan edelliseen näkymään. Jos haluaa lisätä tai poistaa astutuksen, valitaan `lisää astutus`, jolloin siirrytään näkymään, jossa voi lisätä tai poistaa astutuksen tai palata takaisin edelliseen näkymään.
 
 ## Perusversion tarjoama toiminnallisuus
 
@@ -37,6 +33,9 @@ astutus`, jolloin siirrytään näkymään, jossa voi lisätä tai poistaa astut
 ### Kirjautumisen jälkeen
 
 - Käyttäjä näkee vaihtoehdot, jotka on mahdollista tehdä. 
+- Käyttäjä voi lisätä kanin valitsemalla `lisää kani`.
+  - Jos kyseinen kani on jo tiedostossa, sovellus ilmoittaa tästä.
+  - Kun kani on lisätty onnistuneesti, sovellus ilmoittaa tästä.
 - Käyttäjä voi tarkistaa mahdolliset astutusparit tietylle kanille valitsemalla `valitse kani`.
   - Käyttäjä näkee mahdolliset parit syöttämällä kanin nimen. 
   - Jos kyseistä kania ei ole tiedoissa, sovellus ilmoittaa tästä.
