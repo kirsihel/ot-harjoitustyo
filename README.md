@@ -20,6 +20,8 @@ Sovellus on tehty käyttäen Javan versiota 11. Sovelluksen käyttöliittymä k�
 
 [AppClass-info](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/AppClass-info.md)
 
+[RabbitClass-info](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/RabbitClass-info.md)
+
 [arkkitehtuuri](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
 [Arkkitehtuurikuvaus](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuurikuvaus.md)
