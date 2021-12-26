@@ -33,6 +33,14 @@ Kun kirjautuminen onnistuu siirrytään pää näkymään:
 
 ![Image](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/p%C3%A4%C3%A4.png)
 
+## Kanin lisäys
+
+Kun valitaan päänäkymästä `lisää kani`, päästään kaninlisäysnäkymään:
+
+![Image](https://github.com/kirsihel/ot-harjoitustyo/blob/master/dokumentaatio/lis%C3%A4%C3%A4.png)
+
+Kun syötetään uuden kanin tiedot ja painetaan `lisää`, niin sovellus ilmoittaa, jos kanin lisäys on onnistunut.
+
 ## Päivämäärät
 
 Kaikki kanien syntymäpäivät sekä muut päivämäärät tulee syöttää muodossa "vvvv-kk-pp".
