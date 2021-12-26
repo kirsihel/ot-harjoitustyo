@@ -57,6 +57,8 @@ public class UserDao implements DaoUser {
     
     /**
     * Metodin avulla voidaan tarkastaa löytyykö käyttäjä tiedostosta. 
+     * @param username
+     * @return 
     */
     @Override
     public User find(String username) {
@@ -65,6 +67,8 @@ public class UserDao implements DaoUser {
     
     /**
     * Metodin avulla voidaan luoda uusi käyttäjä.
+     * @param user
+     * @return 
     */
     @Override
     public User create(User user) {

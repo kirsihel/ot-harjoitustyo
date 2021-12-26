@@ -1,9 +1,13 @@
 package kanilanastutusohjelma;
 
+import dao.BreedingDao;
+import dao.RabbitDao;
 import dao.UserDao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,11 +26,13 @@ import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import rabbitry.Breeding;
+import rabbitry.Rabbit;
 import service.Service;
 
 public class App extends Application{
     private Service service;
     private VBox breedingnodes;
+    private String usertext;
     
     /**
      *Metodin avulla luodaan UserDao- ja Service-oliot.
@@ -36,18 +42,20 @@ public class App extends Application{
     @Override
     public void init() throws Exception {
         UserDao userdao = new UserDao("userfile.txt");
-        service = new Service(userdao);
+        RabbitDao rabbitdao = new RabbitDao("rabbitfile.txt", userdao);
+        BreedingDao breedingdao = new BreedingDao("breedingfile.txt", userdao, rabbitdao);
+        service = new Service(userdao, rabbitdao, breedingdao);
     }
     
     public Node createBreedingNode(Breeding breeding) {
         HBox box = new HBox();
         box.setSpacing(10);
-        Label label  = new Label(breeding.getDoe() + " x " + breeding.getBuck() + "; " + breeding.getDate());
+        Label label  = new Label(breeding.getDoe().getName() + ";" + breeding.getBuck().getName() + ";" + breeding.getDate().toString());
         label.setMinHeight(28);
         Button button = new Button("astutettu");
         button.setOnAction(e->{
-            Service.markDone(breeding.getId());
-            redrawTodolist();
+            service.markDone(breeding.getId());
+            redrawBreedinglist();
         });
                 
         Region spacer = new Region();
@@ -58,10 +66,10 @@ public class App extends Application{
         return box;
     }
     
-    public void redrawTodolist() {
+    public void redrawBreedinglist() {
         breedingnodes.getChildren().clear();     
 
-        List<Breeding> undonebreedings = Service.getUndone();
+        List<Breeding> undonebreedings = service.getUndone();
         undonebreedings.forEach(breeding->{
             breedingnodes.getChildren().add(createBreedingNode(breeding));
         });     
@@ -89,6 +97,9 @@ public class App extends Application{
         Button returback = new Button("Palaa");
         Button addrabbit = new Button("lisää kani");
         Button backtomain = new Button("Palaa");
+        Button check = new Button("tarkista");
+        Button look = new Button("tarkista");
+        Button breedingadd = new Button("kirjaa astutus");
         
         TextField usernameinput = new TextField();
         TextField rabbitrynameinput = new TextField();
@@ -108,6 +119,7 @@ public class App extends Application{
         TextField fathersmotherinput = new TextField();
         TextField mothersfatherinput = new TextField();
         TextField mothersmotherinput = new TextField();
+        TextField output = new TextField();
         
         HBox user = new HBox();
         user.getChildren().add(new Label("käyttäjänimi:    "));
@@ -154,7 +166,7 @@ public class App extends Application{
         main.getChildren().add(addrabbit);
         main.getChildren().add(choose);
         main.getChildren().add(pair);
-        main.getChildren().add(new Button("kirjaa astutus"));
+        main.getChildren().add(breedingadd);
         main.getChildren().add(logout);
         
         HBox doe = new HBox();
@@ -170,7 +182,9 @@ public class App extends Application{
         rabbits.getChildren().add(doe);
         rabbits.getChildren().add(buck);
         rabbits.getChildren().add(new Label ("Sopiiko astutus?"));
-        rabbits.getChildren().add(new TextField());
+        rabbits.getChildren().add(output);
+        rabbits.getChildren().add(check);
+        
         
         HBox retback = new HBox();
         retback.setSpacing(10);
@@ -185,7 +199,9 @@ public class App extends Application{
         possibilities.getChildren().add(new Label ("valitse kani"));
         possibilities.getChildren().add(rabbitinput);
         possibilities.getChildren().add(new Label ("mahdolliset parit"));
+        rabbitoutput.setMinHeight(100);
         possibilities.getChildren().add(rabbitoutput);
+        possibilities.getChildren().add(look);
         
         HBox backret = new HBox();
         backret.setSpacing(10);
@@ -266,41 +282,43 @@ public class App extends Application{
         rabbit.getChildren().add(add);
         
         ScrollPane breedings = new ScrollPane();
-        BorderPane breeding = new BorderPane();
+        BorderPane breeding = new BorderPane(breedings);
         HBox createform = new HBox();
         createform.setSpacing(10);
         Button addbreeding = new Button("lisää");
         TextField breedinginput = new TextField();
+        breedinginput.setMinWidth(300);
         createform.getChildren().add(breedinginput);
         createform.getChildren().add(addbreeding);
         
         breedingnodes = new VBox();
         breedingnodes.setSpacing(10);
-        breedingnodes.setMaxWidth(200);
-        breedingnodes.setMinWidth(200);
-        redrawTodolist();
+        breedingnodes.setMaxWidth(400);
+        breedingnodes.setMinWidth(400);
+        redrawBreedinglist();
         
         HBox tomain = new HBox();
-        reback.setSpacing(10);
-        reback.getChildren().add(new Label("                                                     "));
-        reback.getChildren().add(backtomain);
+        tomain.setSpacing(10);
+        tomain.getChildren().add(new Label("                                                     "));
+        tomain.getChildren().add(backtomain);
         
         breedings.setContent(breedingnodes);
         breeding.setBottom(createform);
         breeding.setTop(tomain);
         
         addbreeding.setOnAction(e->{
-            Service.createBreeding(breedinginput.getText());
+            service.createBreeding(breedinginput.getText());
             breedinginput.setText("");       
-            redrawTodolist();
+            redrawBreedinglist();
         });
         
         Scene view = new Scene(layout,230,100);
         Scene signin = new Scene(sign,250,150);
         Scene main_view = new Scene(main,230,200);
         Scene pairview = new Scene(pairs,230,200);
-        Scene possibleview = new Scene(possible,230,200);
+        Scene possibleview = new Scene(possible,230,250);
         Scene rabbitview = new Scene(rabbit,230,410);
+        Scene breedingview = new Scene(breeding, 400, 200);
         
 
         newuser.setOnAction((event) -> {
@@ -312,13 +330,13 @@ public class App extends Application{
         });
         
         create.setOnAction((event) -> {
-            String usernametext = nameinput.getText();
+            String name = nameinput.getText();
             String rabbitrynametext = rabbitrynameinput.getText();
             String breederidtext = breederidinput.getText();
             
-            if (usernametext.length() < 5) {
+            if (name.length() < 5) {
                 nameinput.setText("liian lyhyt käyttäjänimi");              
-            } else if (service.createUser(usernametext, rabbitrynametext, breederidtext)) {
+            } else if (service.createUser(name, rabbitrynametext, breederidtext)) {
                 nameinput.setText("uusi käyttäjä luotu");
             } else {
                 nameinput.setText("käyttäjänimi on jo olemassa");        
@@ -326,8 +344,8 @@ public class App extends Application{
         });
         
         login.setOnAction((event) -> {
-          String name =  usernameinput.getText();
-          if(service.logIn(name)) {
+          usertext =  usernameinput.getText();
+          if(service.logIn(usertext)) {
               stage.setScene(main_view);
           } else {
               usernameinput.setText("käyttäjänimeä ei löydy");
@@ -345,6 +363,34 @@ public class App extends Application{
         addrabbit.setOnAction((event) -> {
             stage.setScene(rabbitview);
         });
+
+        add.setOnAction((event) -> {
+            String nametext = rabbitnameinput.getText();
+            String breedtext = breedinput.getText();
+            String sextext = sexinput.getText();
+            String birthdatetext = birthdateinput.getText();
+            String fathertext = fatherinput.getText();
+            String mothertext = motherinput.getText();
+            String fathersfathertext = fathersfatherinput.getText();
+            String fathersmothertext = fathersmotherinput.getText();
+            String mothersfathertext = mothersfatherinput.getText();
+            String mothersmothertext = mothersmotherinput.getText();
+            if(service.createRabbit(nametext, breedtext, sextext, LocalDate.parse(birthdatetext), fathertext, mothertext, fathersfathertext, fathersmothertext, mothersfathertext, mothersmothertext, service.getUser(usertext))) {
+                rabbitnameinput.setText("kani lisätty");
+                rabbitnameinput.setText("");
+                breedinput.setText("");
+                sexinput.setText("");
+                birthdateinput.setText("");
+                fatherinput.setText("");
+                motherinput.setText("");
+                fathersfatherinput.setText("");
+                fathersmotherinput.setText("");
+                mothersfatherinput.setText("");
+                mothersmotherinput.setText("");
+            } else {
+                rabbitnameinput.setText("kani on jo olemassa");
+            }
+        });
         
         returnback.setOnAction((event) -> {
             stage.setScene(main_view);
@@ -359,7 +405,47 @@ public class App extends Application{
         });
         
         logout.setOnAction((event) -> {
+            usernameinput.setText("");
             stage.setScene(view);
+        });
+        
+        look.setOnAction((event) -> {
+            String rabbittext = rabbitinput.getText();
+            Rabbit bunny = service.getRabbit(rabbittext);
+            List<Rabbit> bunnies = service.getRabbits();
+            List<Rabbit> possiblepairs = new ArrayList<>();
+            for(Rabbit r: bunnies) {
+                if(!r.getName().equals(bunny.getName()) && !r.isRelated(bunny) && !r.getSex().equals(bunny.getSex()) &&
+                bunny.getBreed().equals(r.getBreed()) && (r.getAge().getMonths()>=6 || r.getAge().getYears()>=1)) {
+                    possiblepairs.add(r);
+                }
+            }
+            String text = "";
+            for(Rabbit r: possiblepairs) {
+                text = text + r.getName() + ", ";
+            }
+            rabbitoutput.setText(text);
+        });
+        
+        check.setOnAction((event) -> {
+            Rabbit doebunny = service.getRabbit(doeinput.getText());
+            Rabbit buckbunny = service.getRabbit(buckinput.getText());
+            if (!doebunny.isRelated(buckbunny) && !doebunny.getSex().equals(buckbunny.getSex()) &&
+                doebunny.getBreed().equals(buckbunny.getBreed()) && (doebunny.getAge().getMonths()>=6 || doebunny.getAge().getYears()>=1) &&
+                (buckbunny.getAge().getMonths()>=6 || buckbunny.getAge().getYears()>=1)) {
+                output.setText("astutus onnistuu!");
+            } else {
+                output.setText("astutus ei onnistu!");
+            }
+        });
+        
+        breedingadd.setOnAction((event) -> {
+            stage.setScene(breedingview);
+            redrawBreedinglist();
+        });
+        
+        backtomain.setOnAction((event) -> {
+            stage.setScene(main_view);
         });
         
         stage.setScene(view);

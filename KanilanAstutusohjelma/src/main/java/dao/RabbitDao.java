@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Scanner;
 import rabbitry.Rabbit;
 import java.time.LocalDate;
+import user.User;
 
 /**
  *
@@ -20,10 +21,12 @@ import java.time.LocalDate;
 public class RabbitDao implements DaoRabbit {
     private List<Rabbit> rabbits;
     private String file;
+    private UserDao userdao;
     
-    public RabbitDao(String file) throws Exception {
+    public RabbitDao(String file, UserDao userdao) throws Exception {
         this.rabbits = new ArrayList<>();
         this.file = file;
+        this.userdao = userdao;
         load();
     }
     
@@ -32,7 +35,8 @@ public class RabbitDao implements DaoRabbit {
             Scanner reader = new Scanner(new File(file));
             while (reader.hasNextLine()) {
                 String[] words = reader.nextLine().split(";");
-                Rabbit rabbit = new Rabbit(words[0], words[1], words[2], LocalDate.parse(words[3]), words[4], words[5], words[6], words[7], words[8], words[9]);
+                User user = userdao.getUsers().stream().filter(u->u.getUsername().equals(words[10])).findFirst().orElse(null);
+                Rabbit rabbit = new Rabbit(words[0], words[1], words[2], LocalDate.parse(words[3]), words[4], words[5], words[6], words[7], words[8], words[9], user);
                 
                 rabbits.add(rabbit);
             }
@@ -49,10 +53,11 @@ public class RabbitDao implements DaoRabbit {
             FileWriter writer = new FileWriter(new File(file));
             for (Rabbit rabbit : rabbits) {
                 writer.write(rabbit.getName() + ";" + rabbit.getBreed() + ";" + 
-                        rabbit.getSex() + ";" + rabbit.getBirthDate() + ";" +
+                        rabbit.getSex() + ";" + rabbit.getBirthDate().toString() + ";" +
                         rabbit.getFather() + ";" + rabbit.getMother() + ";" +
                         rabbit.getFathersFather() + ";" + rabbit.getFathersMother() + ";" +
-                        rabbit.getMothersFather() + ";" + rabbit.getMothersMother() + ";" + "\n");
+                        rabbit.getMothersFather() + ";" + rabbit.getMothersMother() + ";" + 
+                        rabbit.getUser().getUsername() + "\n");
             }
             writer.close();
         } catch (Exception e) {

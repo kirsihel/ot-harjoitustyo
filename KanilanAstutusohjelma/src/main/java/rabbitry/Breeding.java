@@ -23,6 +23,21 @@ public class Breeding {
         this.done = done;
     }
     
+    /**
+     *
+     * @param buck
+     * @param doe
+     * @param date
+     * @param user
+     */
+    public Breeding(Rabbit buck, Rabbit doe, LocalDate date, User user) {
+        this.buck = buck;
+        this.doe = doe;
+        this.date = date;
+        this.user = user;
+        this.done = false;
+    }
+    
     public Rabbit getBuck() {
         return this.buck;
     }

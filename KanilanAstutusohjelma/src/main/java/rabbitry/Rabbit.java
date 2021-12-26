@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
+import user.User;
 
 /**
  * Luokka tarjoaa kanien tietojen ylläpitoa ja tietojen noutoa. 
@@ -19,10 +20,13 @@ public class Rabbit {
     private String fathersmother;
     private String mothersfather;
     private String mothersmother;
+    private User user;
+    private List<String> family;
     
     public Rabbit(String name, String breed, String sex, LocalDate birthdate, 
             String father, String mother, String fathersfather, 
-            String fathersmother, String mothersfather, String mothersmother) {
+            String fathersmother, String mothersfather, String mothersmother, 
+            User user) {
         this.name = name;
         this.breed = breed;
         this.sex = sex;
@@ -33,6 +37,8 @@ public class Rabbit {
         this.fathersmother = fathersmother;
         this.mothersfather = mothersfather;
         this.mothersmother = mothersmother;
+        this.user = user;
+        this.family = new ArrayList<>();
     }
     
     public String getName() {
@@ -81,8 +87,11 @@ public class Rabbit {
         return this.mothersmother;
     }
     
-    public ArrayList<String> getFamily() {
-        ArrayList<String> family = new ArrayList<>();
+    public User getUser() {
+        return this.user;
+    }
+    
+    public List<String> getFamily() {
         family.add(getFather());
         family.add(getMother());
         family.add(getFathersFather());
@@ -94,10 +103,11 @@ public class Rabbit {
     
     /**
     * Metodin avulla voidaan tarkistaa, onko kaksi kania toisilleen sukua. 
+     * @param rabbit
+     * @return 
     */
     public boolean isRelated(Rabbit rabbit) {
-        List<String> family = getFamily();
-        
+        getFamily();
         if (family.contains(rabbit.getFather())) {
             return true;
         } else if (family.contains(rabbit.getMother())) {
@@ -109,6 +119,8 @@ public class Rabbit {
         } else if (family.contains(rabbit.getMothersFather())) {
             return true;
         } else if (family.contains(rabbit.getMothersMother())) {
+            return true;
+        } else if (family.contains(rabbit.getName())) {
             return true;
         }
         

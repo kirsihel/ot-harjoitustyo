@@ -19,7 +19,7 @@ import user.User;
  *
  * @author Kirsi
  */
-public class BreedingDao implements DaoBreeding{
+public class BreedingDao implements DaoBreeding {
     private List<Breeding> breedings;
     private String file;
     
@@ -45,12 +45,12 @@ public class BreedingDao implements DaoBreeding{
         
     }
     
-    private void save() throws Exception{
+    private void save() throws Exception {
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (Breeding breeding : breedings) {
                 writer.write(breeding.getId() + ";" + breeding.getBuck().getName() + ";" +
-                        breeding.getDoe().getName() + ";" + breeding.getDate() + 
-                        breeding.getDone() + breeding.getUser().getUsername() + "\n");
+                        breeding.getDoe().getName() + ";" + breeding.getDate() + ";" +
+                        breeding.getDone() + ";" + breeding.getUser().getUsername() + "\n");
             }
         }
     }    

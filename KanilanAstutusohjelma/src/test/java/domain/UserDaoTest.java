@@ -6,6 +6,7 @@
 package domain;
 
 import dao.UserDao;
+import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -28,11 +29,16 @@ public class UserDaoTest {
     }
     
     @Test
-    public void findUser() {
+    public void findUser() throws Exception {
         User user = new User("kirsihel","Mystical","F131");
-        if (userdao.find("kirsihel")==null) {
-            userdao.create(user);
-        }
+        userdao.create(user);
         assertEquals(userdao.find("kirsihel").getUsername(),user.getUsername());
     }
+    
+    @Test
+    public void getUsers() throws Exception {
+        User user = new User("kirsihel","Mystical","F131");
+        List<User> users = userdao.getUsers();
+        assertEquals(users.get(0).getUsername(),user.getUsername());
+    }    
 }

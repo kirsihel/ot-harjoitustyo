@@ -1,0 +1,2 @@
+1;Mystical Jolteon;Hiekkarinteen Dora;2021-12-13;true;kirsihel
+2;Mystical Jolteon;Hiekkarinteen Dora;2021-12-13;false;kirsihel
